@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button, Row,Col } from 'react-bootstrap';
 import {  MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput,MDBBtn } from "mdbreact";
+import image from '../image/baa.jpg';
+
 
 class Login extends Component {
     constructor(props) {
@@ -21,7 +23,7 @@ class Login extends Component {
             className='card-image'
             style={{
               backgroundImage:
-                'url(http://localhost:8080///adelement/images/bg12.jpg)',
+                `url(${image})`,
               width: '28rem'
             }}
           >
@@ -30,7 +32,7 @@ class Login extends Component {
                 <h3 className='white-text mb-5 mt-4 font-weight-bold'>
                   <strong>SIGN</strong>
                   <a href='#!' className='green-text font-weight-bold'>
-                    <strong> UP</strong>
+                    <strong> IN</strong>
                   </a>
                 </h3>
               </div>
@@ -40,6 +42,7 @@ class Login extends Component {
                 type='text'
                 validate
                 labelClass='white-text'
+                required
               />
               <MDBInput
                 label='Your password'
@@ -47,7 +50,9 @@ class Login extends Component {
                 type='password'
                 validate
                 labelClass='white-text'
+                required
               />
+              
               <div className='md-form pb-3'>
                 <MDBInput
                   label={

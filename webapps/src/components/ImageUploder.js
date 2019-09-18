@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Row, Col } from 'react-bootstrap';
-
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput, MDBBtn } from "mdbreact";
 class ImageUploder extends Component {
     constructor(props) {
         super(props);
@@ -30,13 +30,20 @@ class ImageUploder extends Component {
  }
     render() {
         return (
-            <div>
+            <MDBRow>
+            <MDBCol sm={3}>
+            <div style={{ display: "flex" }}>
                 <input style={{display:'none'}} type="file" onChange={this.fileSelectHandler}
                 ref={fileInput =>this.fileInput=fileInput}
                 />
-                <Button onClick={()=>this.fileInput.click()}>select your image</Button>
-                <Button onClick={this.fileUploadHandler}>upload</Button>
-            </div>
+                <Button size="sm"
+                variant="success"  style={{ marginRight: "auto",marginTop:"36px" }}
+                onClick={()=>this.fileInput.click()}>Browse</Button>
+                 
+          </div>
+            </MDBCol>
+            <MDBCol sm={9}><MDBInput label="Upload your image" labelClass='white-text'  disabled type="text" /></MDBCol>
+          </MDBRow>
         )
     }
  

@@ -28,16 +28,14 @@ class Navigation extends Component {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav right >
             <MDBNavItem active>
-              <MDBNavLink to="/Home" >Home</MDBNavLink>
+              <MDBNavLink to="/" >Home</MDBNavLink>
+            </MDBNavItem>
+          
+            <MDBNavItem>
+              <MDBNavLink to="Login">Sign In</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Admin">CreateAds</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="Login">SignIn</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="SignUp">SignUp</MDBNavLink>
+              <MDBNavLink to="SignUp">Sign Up</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink className="waves-effect waves-light" to="#!">

@@ -15,20 +15,8 @@ class Ads extends Component {
             <div>
 
                 <img src={url + image} width="100%" height="300px"></img>
-                <p class="text"> {productName} </p>
-                <p class="text">${price}</p>
-
-                {/* <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={url+ads.image} weight="200px" height="200px" />
-                                <Card.Body>
-                                    
-                                    <Card.Text>
-                                    <p> {ads.productName} ${ads.price}</p>
-                                    </Card.Text>
-                                    <Button variant="primary">shop now</Button>
-                                </Card.Body>
-                                </Card> 
-                                */}
+                <p class="adText">  &#x20b9;{price} </p>
+               
 
             </div>
         );

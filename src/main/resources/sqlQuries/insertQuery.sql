@@ -1,2 +1,2 @@
-INSERT INTO adds (productName,prize,image,logo)
+INSERT INTO adds (productName,prize,logo,image)
 values(?,?,?,?)

@@ -11,7 +11,7 @@ class Admin extends PureComponent {
                     <br></br>
                     <Row>
                         <Col sm={12}>                               
-                               <CreateNewAd></CreateNewAd>                             
+                                                    
                         </Col>
                     </Row>                
                    

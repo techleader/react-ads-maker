@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
-import { 
-    MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput,
-      MDBBtn } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput, MDBBtn, MDBCardBody, MDBIcon,  } from "mdbreact";
+import image from '../image/baa.jpg';
     
 
 class SignUp extends React.Component {
@@ -13,23 +12,31 @@ class SignUp extends React.Component {
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
+  submitHandler = event => {
+    event.preventDefault();
+    event.target.className += " was-validated";
+  };
+
+  changeHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   render() {
    
     return (
       <div >
-      
-     
-     
       <br></br>
       <MDBContainer>
+        <form className="needs-validation"
+          onSubmit={this.submitHandler}
+          noValidate>
       <MDBRow>
         <MDBCol md='6'>
           <MDBCard
             className='card-image'
             style={{
               backgroundImage:
-                'url(../image/P-17.jpg)',
+                `url(${image})`,
               width: '28rem'
             }}
           >
@@ -42,62 +49,68 @@ class SignUp extends React.Component {
                   </a>
                 </h3>
               </div>
-              <MDBInput label='Your email'
-                group
-                type='text'
-                validate
-                labelClass='white-text'
-              />
+             
+             
               <MDBInput
-                label='Your password'
-                group
-                type='password'
-                validate
+                value={this.state.fname}
+                name="fname"
+                onChange={this.changeHandler}
+                type="text"
+                id="materialFormRegisterNameEx"
+                label="First name"
                 labelClass='white-text'
-              />
-              <div className='md-form pb-3'>
-                <MDBInput
-                  label={
-                    <>
-                      Accept the&nbsp;
-                      <a href='#!' className='green-text font-weight-bold'>
-                        Terms and Conditions
-                      </a>
-                    </>
-                  }
-                  type='checkbox'
-                  id='checkbox1'
-                  labelClass='white-text'
-                />
-              </div>
+                required
+              >
+               
+              </MDBInput>
+              <MDBInput
+                value={this.state.email}
+                onChange={this.changeHandler}
+                type="email"
+                id="materialFormRegisterConfirmEx3"
+                name="email"
+                label="Your Email address"
+                labelClass='white-text'
+              >
+                 
+              </MDBInput>
+              <MDBInput
+                value={this.state.password}
+                onChange={this.changeHandler}
+                type="password"
+                id="materialFormRegisterPasswordEx4"
+                name="password"
+                label="password"
+                labelClass='white-text'
+                required
+              >
+               
+               
+              </MDBInput>
+
               <MDBRow className='d-flex align-items-center mb-4'>
                 <div className='text-center mb-3 col-md-12'>
                   <MDBBtn
                     color='success'
                     rounded
-                    type='button'
+                    type='submit'
                     className='btn-block z-depth-1'
                   >
-                    Sign in
+                    Sign Up
                   </MDBBtn>
                 </div>
               </MDBRow>
-              <MDBCol md='12'>
-                <p className='font-small white-text d-flex justify-content-end'>
-                  Have an account?
-                  <a href='#!' className='green-text ml-1 font-weight-bold'>
-                    Log in
-                  </a>
-                </p>
-              </MDBCol>
+
             </div>
           </MDBCard>
         </MDBCol>
       </MDBRow>
+      </form>
     </MDBContainer>
-                    
+ 
+   
 
-       
+
       </div>
     );
   }
