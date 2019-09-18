@@ -16,8 +16,7 @@ public class ImageService {
         try {
             String uploadedFileLocation = IMAGES_LOCATION + "/" + file.getOriginalFilename();
             InputStream inputStream = file.getInputStream();
-            OutputStream out = new FileOutputStream(new File(
-                    uploadedFileLocation));
+            OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
             int read = 0;
             byte[] bytes = new byte[1024];
 

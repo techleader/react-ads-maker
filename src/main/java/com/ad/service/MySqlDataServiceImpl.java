@@ -34,7 +34,6 @@ public class MySqlDataServiceImpl implements DataService {
                         ads.setPrice(rs.getInt("price"));
                         ads.setLogo(rs.getString("logo"));
                         ads.setImage(rs.getString("image"));
-
                         return ads;
                     }
                 });

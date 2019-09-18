@@ -10,15 +10,12 @@ import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-
 import javax.servlet.MultipartConfigElement;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
-
 @Configuration
 public class AdsConfig {
-
 
     @Value("${DB_URL}")
     String DB_URL;
@@ -28,8 +25,6 @@ public class AdsConfig {
     String DB_USERNAME;
     @Value("${DB_PASSWORD}")
     String DB_PASSWORD;
-
-
 
     @Bean
     public DataSource dataSource(){
