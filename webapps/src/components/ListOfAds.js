@@ -1,10 +1,9 @@
+import { MDBAnimation, MDBCard, MDBCol, MDBRow } from "mdbreact";
 import React, { Component } from 'react';
-import App from '../App.css';
-import { Row, Col, Card, Button } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
+import { TiArrowLeftOutline } from "react-icons/ti";
 import Ads from './Ads';
-import Carousel from 'react-bootstrap/Carousel'
-import { MDBRow, MDBCol, MDBCard, MDBAnimation, } from "mdbreact";
-import { TiArrowLeftOutline, TiArrowRightOutline, TiArrowForward } from "react-icons/ti";
 
 class ListOfAds extends Component {
 
@@ -15,7 +14,6 @@ class ListOfAds extends Component {
         var carouselView = "";
         var listView = "";
         var adsList = this.props.init;
-
         if (adsList.length == 0) {
             createAdFirstMessage = <div class="text ">
                 you don't have ad,
@@ -54,12 +52,11 @@ class ListOfAds extends Component {
                                                                 <button type="button" size="lg" class="btn btn-outline-success btn-rounded waves-effect">
                                                                     <TiArrowLeftOutline size={40} color="green"></TiArrowLeftOutline>
                                                                     Shop now
-                                                        </button>
+                                                                </button>
                                                             </MDBAnimation>
                                                         </MDBAnimation>
                                                         <Carousel.Caption>
-                                                            <MDBAnimation type="bounceInDown slow" >
-                                                            </MDBAnimation>
+                                                           
                                                         </Carousel.Caption>
                                                     </Col>
                                                 </Row>

@@ -48,10 +48,8 @@ class SignUp extends React.Component {
                     <strong> UP</strong>
                   </a>
                 </h3>
-              </div>
-             
-             
-              <MDBInput
+              </div>                        
+             <MDBInput
                 value={this.state.fname}
                 name="fname"
                 onChange={this.changeHandler}
@@ -60,8 +58,7 @@ class SignUp extends React.Component {
                 label="First name"
                 labelClass='white-text'
                 required
-              >
-               
+              >               
               </MDBInput>
               <MDBInput
                 value={this.state.email}
@@ -71,8 +68,7 @@ class SignUp extends React.Component {
                 name="email"
                 label="Your Email address"
                 labelClass='white-text'
-              >
-                 
+              >              
               </MDBInput>
               <MDBInput
                 value={this.state.password}
@@ -83,11 +79,8 @@ class SignUp extends React.Component {
                 label="password"
                 labelClass='white-text'
                 required
-              >
-               
-               
+              >                        
               </MDBInput>
-
               <MDBRow className='d-flex align-items-center mb-4'>
                 <div className='text-center mb-3 col-md-12'>
                   <MDBBtn

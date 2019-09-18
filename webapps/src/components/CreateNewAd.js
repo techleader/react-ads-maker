@@ -65,12 +65,12 @@ class CreateNewAdd extends React.Component {
     axios.post('http://localhost:8080/adMaker/saveNewAds', formData)
       .then(respose => {
         this.setState({
-          status: "Ads succesfully added",
+          status: "Ad succesfully added",
         });
         this.props.refresh();
         this.state.productName = "";
         this.state.price = "";
-        this.state.status="";
+        
       })
       .catch(error => {
         this.setState({
@@ -122,9 +122,7 @@ class CreateNewAdd extends React.Component {
               labelClass='white-text'
               value={this.state.price}
               onChange={this.setAdPropertyToState}
-            />
-
-            
+            />          
             <MDBRow>
               <MDBCol sm={3}>
                 <div style={{ display: "flex" }}>
@@ -137,7 +135,8 @@ class CreateNewAdd extends React.Component {
                   />
                   <MDBAnimation type=" " infinite>
                     <MDBBtn size="sm" color="success"
-                      variant="success" style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
+                      variant="success" 
+                      style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
                       onClick={() => this.input2.click()}>
                       Browse
                     </MDBBtn>
@@ -147,11 +146,9 @@ class CreateNewAdd extends React.Component {
               <MDBCol sm={9}>
                 <MDBInput label={imageLabel} labelClass='white-text' disabled type="text" />
               </MDBCol>
-
             </MDBRow>
 
             <MDBRow>
-
                   <MDBCol sm={3}>
                     <div style={{ display: "flex" }}>
                       <input
@@ -163,9 +160,10 @@ class CreateNewAdd extends React.Component {
                       />
                       <MDBAnimation type="" infinite>
                         <MDBBtn size="sm" color="success"
-                          variant="success" style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
+                          variant="success" 
+                          style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
                           onClick={() => this.input1.click()}>Browse
-                  </MDBBtn>
+                        </MDBBtn>
                       </MDBAnimation>
 
                     </div>
