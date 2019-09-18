@@ -3,7 +3,7 @@ CREATE TABLE ads (
     productName VARCHAR(100) NOT NULL,
     price  int NOT NULL,
     logo VARCHAR(100) NOT NULL,
-    imageUrl VARCHAR(100) NOT NULL,
+    image VARCHAR(100) NOT NULL,
     PRIMARY KEY ( adsid ));
 
 .................insert......................
