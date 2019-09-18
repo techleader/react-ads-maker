@@ -5,7 +5,6 @@ import App from '../App.css';
 import { MDBRow, MDBCol, MDBCard, MDBInput, MDBBtn, MDBAnimation, MDBIcon } from "mdbreact";
 import ImageUploder from './ImageUploder';
 import image from '../image/bg12.jpg';
-import { Redirect } from 'react-router-dom'
 
 class CreateNewAdd extends React.Component {
   constructor(props) {
@@ -44,19 +43,6 @@ class CreateNewAdd extends React.Component {
     }
   }
 
-  // {..............upload Image Handler..........}
-
-  fileUploadHandler = () => {
-    const formData = new FormData();
-    formData.append('file', this.state.selectFile, this.state.selectFile.name);
-    axios.post('http://localhost:8080/adelement/image/upload', formData, {
-
-    })
-      .then(res => {
-        console.log(res);
-      });
-
-  }
 
   //{......set Ads Properties to state........}
   setAdPropertyToState = (e) => {
@@ -74,17 +60,17 @@ class CreateNewAdd extends React.Component {
     const formData = new FormData();
     formData.append('productName', this.state.productName);
     formData.append('price', this.state.price);
-    formData.append('image', this.state.image.file, this.state.image.name);
     formData.append('logo', this.state.logo.file, this.state.logo.name);
+    formData.append('image', this.state.image.file, this.state.image.name);
     axios.post('http://localhost:8080/adMaker/saveNewAds', formData)
       .then(respose => {
         this.setState({
           status: "Ads succesfully added",
         });
         this.props.refresh();
-        this.state.productName="";
-        this.state.price="";
-       
+        this.state.productName = "";
+        this.state.price = "";
+        this.state.status="";
       })
       .catch(error => {
         this.setState({
@@ -138,15 +124,14 @@ class CreateNewAdd extends React.Component {
               onChange={this.setAdPropertyToState}
             />
 
+            
             <MDBRow>
-
               <MDBCol sm={3}>
                 <div style={{ display: "flex" }}>
                   <input
                     style={{ display: 'none' }}
                     type="file"
-                    name="logo"
-
+                    name="image"
                     onChange={this.fileSelectHandler}
                     ref={input2 => this.input2 = input2}
                   />
@@ -156,63 +141,40 @@ class CreateNewAdd extends React.Component {
                       onClick={() => this.input2.click()}>
                       Browse
                     </MDBBtn>
-
                   </MDBAnimation>
                 </div>
               </MDBCol>
               <MDBCol sm={9}>
-                <MDBInput label={logoLabel} labelClass='white-text' disabled type="text" />
-              </MDBCol>
-
-            </MDBRow>
-            <MDBRow>
-
-              <MDBCol sm={3}>
-                <div style={{ display: "flex" }}>
-                  <input
-                    style={{ display: 'none' }}
-                    type="file"
-                    name="image"
-                    onChange={this.fileSelectHandler}
-                    ref={input1 => this.input1 = input1}
-                  />
-                  <MDBAnimation type="" infinite>
-                    <MDBBtn size="sm" color="success"
-                      variant="success" style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
-                      onClick={() => this.input1.click()}>Browse
-                      </MDBBtn>
-
-                  </MDBAnimation>
-
-
-                </div>
-              </MDBCol>
-              <MDBCol sm={9} >
                 <MDBInput label={imageLabel} labelClass='white-text' disabled type="text" />
               </MDBCol>
 
             </MDBRow>
 
+            <MDBRow>
 
+                  <MDBCol sm={3}>
+                    <div style={{ display: "flex" }}>
+                      <input
+                        style={{ display: 'none' }}
+                        type="file"
+                        name="logo"
+                        onChange={this.fileSelectHandler}
+                        ref={input1 => this.input1 = input1}
+                      />
+                      <MDBAnimation type="" infinite>
+                        <MDBBtn size="sm" color="success"
+                          variant="success" style={{ position: "absolute", marginLeft: "0.5px", marginTop: "36px" }}
+                          onClick={() => this.input1.click()}>Browse
+                  </MDBBtn>
+                      </MDBAnimation>
 
+                    </div>
+                  </MDBCol>
+                  <MDBCol sm={9} >
+                    <MDBInput label={logoLabel} labelClass='white-text' disabled type="text" />
+                  </MDBCol>
 
-            {/* <div class="inline">
-                <div class="text-align ">image</div>
-                <MDBInput  name="logo"
-                  type='file' 
-                  style={{color: 'white'}}
-                  onChange={this.fileSelectHandler}
-                  accept="image/*" />
-              
-               <div class="text-align">Logo</div>  
-                <MDBInput name='image'
-                  type='file'
-                  style={{color: 'white'}}
-                  onChange={this.fileSelectHandler}
-                  accept="image/*" />
-              </div> */}
-
-
+                  </MDBRow>
             <MDBRow className='d-flex align-items-center mb-4'  >
               <MDBCol md='12' >
                 <div className='text-center '>

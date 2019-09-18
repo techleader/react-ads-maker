@@ -21,7 +21,7 @@ class Navigation extends Component {
          
       <MDBNavbar color="default-color" dark expand="md">
         <MDBNavbarBrand>
-        <img src={require('../image/Capture.PNG')} weight="50px" height="40px" class="avatar shadow-box-example hoverable" />
+        <img src={require('../image/adLogo.PNG')} weight="50px" height="40px" class="avatar shadow-box-example hoverable" />
           
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -39,7 +39,17 @@ class Navigation extends Component {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink className="waves-effect waves-light" to="#!">
-                <MDBIcon fab icon="twitter" />
+                <MDBIcon fab icon="facebook-square"  />
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink className="waves-effect waves-light" to="#!">
+                <MDBIcon  fab icon="google" />
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink className="waves-effect waves-light" to="#!">
+                <MDBIcon fab icon="instagram" />
               </MDBNavLink>
             </MDBNavItem>
            

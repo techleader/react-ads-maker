@@ -31,7 +31,7 @@ public class AdsController {
     public List<Ads> saveNewAds(@RequestParam("productName") String name, @RequestParam("price") int price,
                                 @RequestParam("image") MultipartFile image, @RequestParam("logo") MultipartFile logo) {
         System.out.println("Saving new ad with image and logo " + image.getOriginalFilename() + " - " + logo.getOriginalFilename() );
-        Ads ad = new Ads(name, price, logo.getOriginalFilename(), image.getOriginalFilename());
+        Ads ad = new Ads(name, price, image.getOriginalFilename(),logo.getOriginalFilename());
         dataService.saveAds(ad);
         imageService.writeToFile(image);
         imageService.writeToFile(logo);

@@ -30,20 +30,9 @@ class ImageUploder extends Component {
  }
     render() {
         return (
-            <MDBRow>
-            <MDBCol sm={3}>
-            <div style={{ display: "flex" }}>
-                <input style={{display:'none'}} type="file" onChange={this.fileSelectHandler}
-                ref={fileInput =>this.fileInput=fileInput}
-                />
-                <Button size="sm"
-                variant="success"  style={{ marginRight: "auto",marginTop:"36px" }}
-                onClick={()=>this.fileInput.click()}>Browse</Button>
-                 
-          </div>
-            </MDBCol>
-            <MDBCol sm={9}><MDBInput label="Upload your image" labelClass='white-text'  disabled type="text" /></MDBCol>
-          </MDBRow>
+            <div>
+                <h1>for further use</h1>
+            </div>
         )
     }
  

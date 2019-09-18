@@ -22,7 +22,6 @@ public class MySqlDataServiceImpl implements DataService {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-
     @Override
     public List<Ads> getAllAds() {
         String SQL = "select * from ads";
@@ -41,7 +40,6 @@ public class MySqlDataServiceImpl implements DataService {
                 });
         return adsList;
     }
-
     @Override
     public boolean saveAds(Ads ads) {
         String productName = ads.getProductName();
